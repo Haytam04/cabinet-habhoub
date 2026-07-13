@@ -16,6 +16,61 @@
 
     <title>Reservation</title>
 
+    <!-- Floating WhatsApp Button Styles with Hook Animation -->
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 52px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 10000;
+            width: 85px;
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            animation: whatsapp-attention 3s ease-in-out infinite;
+        }
+        
+        /* Constant subtle hover & pulse effect */
+        @keyframes whatsapp-attention {
+            0% {
+                transform: translateY(0) scale(1);
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                transform: translateY(-8px) scale(1.05);
+                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20ba5a;
+            animation-play-state: paused; /* stops bouncing while hovering for easier clicking */
+            transform: scale(1.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 25px;
+                right: 25px;
+                width: 80px;
+                height: 80px;
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -52,6 +107,11 @@
         </form>
         
     </div>
+
+    <!-- Floating WhatsApp Button Element -->
+    <a href="https://wa.me/212602430970" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+    </a>
 
     <script>
         function validateForm() {

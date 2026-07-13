@@ -25,6 +25,90 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500;600&display=swap"
     rel="stylesheet">
+
+  <!-- Floating WhatsApp Button Styles with Hook Animation -->
+  <!-- Floating WhatsApp Button & Mobile Button Overrides -->
+  <style>
+      .whatsapp-float {
+          position: fixed;
+          bottom: 40px;
+          right: 40px;
+          background-color: #25d366;
+          color: #fff;
+          border-radius: 50%;
+          text-align: center;
+          box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+          z-index: 10000;
+          width: 85px;
+          height: 85px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          transition: transform 0.3s ease, background-color 0.3s ease;
+          animation: whatsapp-glow 2.5s infinite ease-in-out;
+      }
+      .whatsapp-float ion-icon {
+          font-size: 52px;
+          display: block;
+      }
+      .whatsapp-float:hover {
+          background-color: #20ba5a;
+          transform: scale(1.1) !important;
+          animation-play-state: paused;
+      }
+      
+      @keyframes whatsapp-glow {
+          0% {
+              transform: translateY(0) scale(1);
+              box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+          }
+          50% {
+              transform: translateY(-6px) scale(1.04);
+              box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7);
+          }
+          100% {
+              transform: translateY(0) scale(1);
+              box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+          }
+      }
+
+      /* Mobile Layout Fixes */
+      @media screen and (max-width: 768px) {
+          .whatsapp-float {
+              bottom: 25px;
+              right: 25px;
+              width: 80px;
+              height: 80px;
+          }
+          .whatsapp-float ion-icon {
+              font-size: 50px;
+          }
+
+          /* Force reservation button visibility & proper alignment */
+          .header-bottom .container {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 10px;
+          }
+          .header-bottom .btn {
+              display: inline-block !important; 
+              padding: 8px 14px; 
+              font-size: 13px;
+              white-space: nowrap;
+              order: 2; 
+          }
+          .header-bottom .logo {
+              order: 1;
+              font-size: 18px; 
+          }
+          .nav-toggle-btn {
+              order: 3;
+          }
+      }
+      
+  </style>
 </head>
 
 <body id="top">
@@ -575,7 +659,10 @@
   </a>
 
 
-
+  <!-- Floating WhatsApp Button Element -->
+  <a href="https://wa.me/212602430970" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <ion-icon name="logo-whatsapp"></ion-icon>
+  </a>
 
 
   <!-- 
