@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TZPK8DH8');</script>
+    <!-- End Google Tag Manager -->
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -73,6 +83,13 @@
     </style>
 </head>
 <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZPK8DH8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
     <div class="container">
         <a href="index.html" class="btn">précédent</a>
         <form id="form" onsubmit="return validateForm();">
@@ -141,6 +158,15 @@
         }
 
         function sendToWhatsApp(fullName, phoneNumber, email, Ville, description) {
+
+            // Push event data to Google Tag Manager
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'whatsapp_reservation_submitted',
+                'patient_city': Ville
+            });
+
+            
             var whatsappNumber = '+212602430970'; // Remplacez par votre numéro WhatsApp
             var message = `Nom Complet: ${encodeURIComponent(fullName)}%0A` +
                           `Numéro de Téléphone: ${encodeURIComponent(phoneNumber)}%0A` +
